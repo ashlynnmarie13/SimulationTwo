@@ -1,0 +1,6 @@
+-- ALTER TABLE Houses
+--   ADD image VARCHAR(50);
+--   ALTER TABLE Houses
+--   ADD monthly mortgage VARCHAR(50);
+--   ALTER TABLE Houses
+--   ADD rent VARCHAR(50);
