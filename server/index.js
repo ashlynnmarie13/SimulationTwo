@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const { json } = require("body-parser");
 const cors = require("cors");
-const session = require("express-session");
+// const session = require("express-session");
 const massive = require("massive");
 
 const controller = require("./controller.js");
@@ -17,16 +17,16 @@ massive(process.env.CONNECTION_STRING).then(dbInstance => {
   app.set("db", dbInstance);
 });
 
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-      maxAge: 7 * 24 * 60 * 60 * 1000
-    }
-  })
-);
+// app.use(
+//   session({
+//     secret: process.env.SESSION_SECRET,
+//     resave: false,
+//     saveUninitialized: false,
+//     cookie: {
+//       maxAge: 7 * 24 * 60 * 60 * 1000
+//     }
+//   })
+// );
 
 app.get("/api/test", (req, res, next) => {
   res.sendStatus(200);
